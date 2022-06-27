@@ -25,6 +25,7 @@ body {
 }
 
 #title {
+    text-align: center;
     font-family: 'Work Sans', sans-serif;
     font-weight: normal;
     font-size: 56px;
@@ -34,6 +35,7 @@ body {
 
 #question-button {
     margin: 40px;
+    text-align: center;
     font-family: 'Work Sans', sans-serif;
     font-weight: normal;
     color: black;
@@ -50,6 +52,7 @@ body {
 
 #question {
     padding: 10px;
+    text-align: center;
     font-family: 'Work Sans', sans-serif;
     font-style: italic;
     font-weight: lighter;

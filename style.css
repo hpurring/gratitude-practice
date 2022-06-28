@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 15%;
+    padding-top: 5%;
 }
 
 body {
@@ -77,6 +77,27 @@ body {
     color: black;
     padding: 10px;
     background-color: #ffffff;
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+#saved-container {
+    margin: 20px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#saved-item {
+    color: black;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    background-color: white;
+    opacity: 50%;
+    padding: 10px;
+    margin: 10px;
     border-radius: 10px;
     border-width: 1px;
 }

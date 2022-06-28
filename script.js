@@ -1,7 +1,8 @@
 var questionEl = document.getElementById("question");
 var responseEl = document.getElementById("response");
 var saveBtn = document.getElementById("save-btn");
-var savedItem = document.getElementById("saved-item")
+var savedItem = document.getElementById("saved-item");
+var savedContainer = document.getElementById("saved-container");
 
 var savedText = [];
 
@@ -54,20 +55,22 @@ saveBtn.addEventListener("click", function () {
             savedText.push(responseEl.value);        
             localStorage.setItem("gratitude", JSON.stringify(savedText));
         };
-
-        // var gratitudeText = responseEl.value;
-        // localStorage.setItem("gratitude", JSON.stringify(gratitudeText));
-        alert("Saved successfully!");
         console.log("Gratitude entry saved.");
         responseEl.value = "";
-        // showSaved();
+        showSaved();
         getQuestion();
 });
 
-// var showSaved = function() {
-//     var savedEntry = JSON.parse(localStorage.getItem("gratitude"));
-//     savedItem.innerHTML = savedEntry;
-// }
+var showSaved = function() {
+    var savedEntry = JSON.parse(localStorage.getItem("gratitude"));
+    if (savedEntry) {
+        for (let x = 0; x < savedEntry.length; x++) {
+            $("#saved-container").append("<a id='saved-item'>" + savedEntry[x] + "</a>")
+        }
+    } else {
+        console.log("Nothing saved yet.");
+    }
+};
 
 
 var buttonEl = document.getElementById("question-button");

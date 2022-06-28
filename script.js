@@ -40,5 +40,14 @@ var displayResponse = function() {
     saveBtn.style.display = 'block';
 }
 
+saveBtn.addEventListener("click", function ()
+    {
+        var gratitudeText = responseEl.value;
+        localStorage.setItem("gratitude", gratitudeText);
+        alert("Saved successfully!");
+        console.log("Gratitude entry saved.");
+        responseEl.value = "";
+    } , false);
+
 var buttonEl = document.getElementById("question-button");
 buttonEl.addEventListener('click', getQuestion);

@@ -1,4 +1,6 @@
 var questionEl = document.getElementById("question");
+var responseEl = document.getElementById("response");
+var saveBtn = document.getElementById("save-btn");
 
 var getQuestion = function() {
 
@@ -18,6 +20,7 @@ var getQuestion = function() {
             response.json().then(function(data) {
                 console.log(data);
                 displayQuestion(data);
+                displayResponse();
             });
             } else {
                 alert('Error: ' + response.statusText);
@@ -31,6 +34,11 @@ var getQuestion = function() {
 var displayQuestion = function(data) {
     questionEl.innerHTML = data.question;
 };
+
+var displayResponse = function() {
+    responseEl.style.display = 'block';
+    saveBtn.style.display = 'block';
+}
 
 var buttonEl = document.getElementById("question-button");
 buttonEl.addEventListener('click', getQuestion);

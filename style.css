@@ -59,3 +59,24 @@ body {
     font-size: 24px;
     color: black;
 }
+
+#response {
+    display: none;
+    width: 66%;
+    height: 200px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+}
+
+#save-btn {
+    display: none;
+    margin: 40px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+    color: black;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-width: 1px;
+}

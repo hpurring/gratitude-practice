@@ -3,6 +3,8 @@ var responseEl = document.getElementById("response");
 var saveBtn = document.getElementById("save-btn");
 var savedItem = document.getElementById("saved-item")
 
+var savedText = [];
+
 var getQuestion = function() {
 
     const options = {
@@ -41,21 +43,32 @@ var displayResponse = function() {
     saveBtn.style.display = 'block';
 }
 
-saveBtn.addEventListener("click", function ()
-    {
-        var gratitudeText = responseEl.value;
-        localStorage.setItem("gratitude", JSON.stringify(gratitudeText));
+saveBtn.addEventListener("click", function () {
+    var savedEntries = JSON.parse(localStorage.getItem("gratitude"));
+        if (!savedEntries) {
+            savedText.push(responseEl.value);        
+            localStorage.setItem("gratitude", JSON.stringify(savedText));
+        } else {
+            savedEntries = JSON.parse(localStorage.getItem("gratitude"));
+            savedText = savedEntries;
+            savedText.push(responseEl.value);        
+            localStorage.setItem("gratitude", JSON.stringify(savedText));
+        };
+
+        // var gratitudeText = responseEl.value;
+        // localStorage.setItem("gratitude", JSON.stringify(gratitudeText));
         alert("Saved successfully!");
         console.log("Gratitude entry saved.");
         responseEl.value = "";
-        showSaved();
+        // showSaved();
         getQuestion();
-    } , false);
+});
 
-var showSaved = function() {
-    var savedEntry = JSON.parse(localStorage.getItem("gratitude"));
-    savedItem.innerHTML = savedEntry;
-}
+// var showSaved = function() {
+//     var savedEntry = JSON.parse(localStorage.getItem("gratitude"));
+//     savedItem.innerHTML = savedEntry;
+// }
+
 
 var buttonEl = document.getElementById("question-button");
 buttonEl.addEventListener('click', getQuestion);

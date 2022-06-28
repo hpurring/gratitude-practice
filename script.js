@@ -1,6 +1,7 @@
 var questionEl = document.getElementById("question");
 var responseEl = document.getElementById("response");
 var saveBtn = document.getElementById("save-btn");
+var savedItem = document.getElementById("saved-item")
 
 var getQuestion = function() {
 
@@ -43,11 +44,18 @@ var displayResponse = function() {
 saveBtn.addEventListener("click", function ()
     {
         var gratitudeText = responseEl.value;
-        localStorage.setItem("gratitude", gratitudeText);
+        localStorage.setItem("gratitude", JSON.stringify(gratitudeText));
         alert("Saved successfully!");
         console.log("Gratitude entry saved.");
         responseEl.value = "";
+        showSaved();
+        getQuestion();
     } , false);
+
+var showSaved = function() {
+    var savedEntry = JSON.parse(localStorage.getItem("gratitude"));
+    savedItem.innerHTML = savedEntry;
+}
 
 var buttonEl = document.getElementById("question-button");
 buttonEl.addEventListener('click', getQuestion);

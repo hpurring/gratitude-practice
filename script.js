@@ -6,6 +6,7 @@ var savedContainer = document.getElementById("saved-container");
 
 var savedText = [];
 
+// fetch question
 var getQuestion = function () {
   const options = {
     method: "GET",
@@ -34,6 +35,7 @@ var getQuestion = function () {
     });
 };
 
+// display new questions
 var displayQuestion = function (data) {
   questionEl.innerHTML = data.question;
 };
@@ -60,12 +62,12 @@ saveBtn.addEventListener("click", function () {
   getQuestion();
 });
 
+// show previous answers
 var showSaved = function () {
+  while (savedContainer.hasChildNodes()) {
+    savedContainer.removeChild(savedContainer.firstChild);
+  }
 
-    while (savedContainer.hasChildNodes()) {
-        savedContainer.removeChild(savedContainer.firstChild);
-      }
-    
   var savedEntry = JSON.parse(localStorage.getItem("gratitude"));
   if (savedEntry) {
     for (let x = 0; x < savedEntry.length; x++) {

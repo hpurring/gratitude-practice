@@ -101,3 +101,18 @@ body {
     border-radius: 10px;
     border-width: 1px;
 }
+
+#
+
+#clear-btn {
+    display: none;
+    margin: 40px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+    color: black;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border-width: 1px;
+}

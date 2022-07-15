@@ -3,6 +3,7 @@ var responseEl = document.getElementById("response");
 var saveBtn = document.getElementById("save-btn");
 var savedItem = document.getElementById("saved-item");
 var savedContainer = document.getElementById("saved-container");
+var clearBtn = document.getElementById("clear-btn");
 
 var savedText = [];
 
@@ -58,6 +59,7 @@ saveBtn.addEventListener("click", function () {
   }
   console.log("Gratitude entry saved.");
   responseEl.value = "";
+  clearBtn.style.display = "block";
   showSaved();
   getQuestion();
 });
@@ -79,6 +81,8 @@ var showSaved = function () {
     console.log("Nothing saved yet.");
   }
 };
+
+
 
 var buttonEl = document.getElementById("question-button");
 buttonEl.addEventListener("click", getQuestion);

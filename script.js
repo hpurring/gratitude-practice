@@ -86,6 +86,7 @@ clearBtn.addEventListener("click", function () {
   localStorage.clear();
   savedText = [];
   showSaved();
+  clearBtn.style.display = "none";
 })
 
 

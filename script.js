@@ -84,6 +84,7 @@ var showSaved = function () {
 
 clearBtn.addEventListener("click", function () {
   localStorage.clear();
+  savedText = [];
   showSaved();
 })
 

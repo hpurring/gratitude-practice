@@ -82,6 +82,10 @@ var showSaved = function () {
   }
 };
 
+clearBtn.addEventListener("click", function () {
+  localStorage.clear();
+  showSaved();
+})
 
 
 var buttonEl = document.getElementById("question-button");
